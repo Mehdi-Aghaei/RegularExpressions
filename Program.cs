@@ -18,26 +18,37 @@ namespace RegularExp
             // \d{3} exactly 3 digit
             //Regex re = new Regex(@"[E]ri.+");
             //Regex re = new Regex(@"Mr\.?\s[a-z]\w*");
-            // it can have that or no with ?
+            // the char before that can have it  or no with using ? exp = https? ==> s is optional also we have optional group  exp= (www\.)?
             // we can create group with ();
-            Regex re = new Regex(@"M(r|s|rs)\.?\s[a-z]\w*");
+            //Regex re = new Regex(@"M(r|s|rs)\.?\s[a-z]\w*");
             // \w* zreo or more word charecter
-            // + will fix formating, I guess.
-
+            // email match
+            //Regex re = new Regex(@"[A-Za-z0-9.-]+@[a-zA-Z-]+\.(com|net|edu)");
             // we want phone number that just start with 0 or 8
             // for is not in range we use [^a-z]
             // in the brace we can write a specific charset that we want between pattern
             // we can say range with dash [1-7]number from one to seven
             // its important to know every brace represent 1 charecter [] == one chhar
-            // + sign for word by word not char by char
             string badString = "Here is a strig with ton of white space.";
             string CleanedString = Regex.Replace(badString, "\\s+", " ");
             string[] digits = Regex.Split(Names, @"\D+");
+            Regex re = new Regex(@"https?://(www\.)?(\w+)(\.\w+)");
+            //Regex re = new Regex(@"[aeiou]");
+            // vowel finder
+            // url finder also we have grop 1,2,3 which is $1 $2 $3 
             MatchCollection matchedNames = re.Matches(Names);
-
-            foreach (var item in matchedNames)
+            int a;
+            a = matchedNames.Count;
+            if (a > 0)
             {
-                Console.WriteLine(item);
+                foreach (var item in matchedNames)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            else
+            {
+                Console.WriteLine("couldn't find any match");
             }
 
         }
