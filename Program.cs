@@ -12,7 +12,11 @@ namespace RegularExp
             string file_path = @"G:\Programming\CSharpPrograms\C#ConsoleProjects\RegularExp\data.txt";
             string Names = File.ReadAllText(file_path);
             RegexElement myel = new RegexElement();
-            Console.WriteLine(myel.FindByElementName("Carbon"));
+            //Console.WriteLine(myel.FindByElementName("Carbon"));
+            //Console.WriteLine(myel.CheckDet());
+
+
+
             //Regex re = new Regex(@"a");
             //Regex re = new Regex(@"\S+");
             //Regex re = new Regex(@".+"); every thing and same format

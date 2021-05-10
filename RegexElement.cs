@@ -11,6 +11,20 @@ namespace RegularExp
 
         public string AtomicMass { get; set; }
         /*AtomicMass NumberofNeutrons    NumberofProtons NumberofElectrons   Period Group   Phase Radioactive Natural Metal   Nonmetal Metalloid   Type AtomicRadius    Electronegativity FirstIonization Density MeltingPoint    BoilingPoint NumberOfIsotopes    Discoverer Year    SpecificHeat NumberofShells  NumberofValence*/
+        public string CheckDet(){
+
+            string elements_path = @"G:\Programming\CSharpPrograms\C#ConsoleProjects\RegularExp\Elements.csv";
+            string[] lines = File.ReadAllLines(elements_path);
+            foreach (string line in lines)
+            {
+                string[] columns = line.Split(',');
+                foreach (string column in columns)
+                {
+                    Console.WriteLine(column);
+                }
+            }
+            return "done";
+        }
         public string FindByElementName(string elementName)
         {
             ElementName = elementName;
