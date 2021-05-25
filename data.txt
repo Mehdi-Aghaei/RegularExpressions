@@ -11,6 +11,8 @@ Mehdi Aghaei
 mehdi@gmail.com
 mehdi@yahoo.com
 hass@yahoo.com
+
+$GPGGA,170154.020,3700.35010,N,12200.51473,W,1,09,1.0,0137.1,M,-26.5,M,,*5C
  
 Dave Martin
 615-555-7164
